@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints out single digit numbers of base 10 using putchar
+ * main - prints out all single digit combinations using putchar
  * Return: exits main function
  */
 int main(void)
