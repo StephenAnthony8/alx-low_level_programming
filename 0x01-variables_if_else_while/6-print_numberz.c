@@ -5,12 +5,12 @@
  */
 int main(void)
 {
-	char i, bn0, bn9;
+	int i, bn0, bn9;
 
 	bn0 = '0';
 	bn9 = '9';
 
-	for (i = bn0; i <= bn9; i++)
+	for (i = '0'; i <= '9'; i++)
 	{
 		putchar(i);
 	}
