@@ -7,9 +7,6 @@ int main(void)
 {
 	int i;
 
-	bn0 = '0';
-	bn9 = '9';
-
 	for (i = '0'; i <= '9'; i++)
 	{
 		putchar(i);
