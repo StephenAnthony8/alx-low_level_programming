@@ -5,12 +5,12 @@
  */
 int main(void)
 {
-	char i, alp_a, alp_z;
+	char i, alphab_a, alphab_z;
 
 	alphab_a = 'a';
 	alphab_z = 'z';
 
-	for (i = alp_z; i >= alp_a; i--)
+	for (i = alphab_z; i >= alphab_a; i--)
 	{
 		putchar(i);
 	}
