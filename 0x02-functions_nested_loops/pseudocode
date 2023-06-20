@@ -1,0 +1,5 @@
+1. 
+	use ascii code values for a-z
+	for loop perhaps
+	for (i = "a"; i < "z"; i++)
+	
