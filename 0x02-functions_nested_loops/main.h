@@ -3,4 +3,6 @@
 
 int _putchar(char var);
 
+void print_alphabet(void);
+
 #endif /* MAIN_H */
