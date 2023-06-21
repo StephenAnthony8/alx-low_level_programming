@@ -47,7 +47,7 @@ void negative_values(int n)
 	int j;
 
 	n = (-n);
-	for (; n >= 0; n--)
+	for (; n > 0; n--)
 	{
 		_putchar('-');
 		if (n >= 100)
