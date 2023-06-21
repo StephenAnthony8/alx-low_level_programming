@@ -48,21 +48,24 @@ void negative_values(int n)
 
 	n = (-n);
 	for (; n > 0; n--)
-	{
-		_putchar('-');
-		if (n >= 100)
-			_putchar((((n % 1000) / 100) + '0'));
-		if (n >= 10)
-			_putchar((((n % 100) / 10) + '0'));
 		if (n != 0)
 		{
+			_putchar('-');
+			if (n >= 100)
+				_putchar((((n % 1000) / 100) + '0'));
+			if (n >= 10)
+				_putchar((((n % 100) / 10) + '0'));
 			_putchar((n % 10) + '0');
 			_putchar(',');
 			_putchar(' ');
 		}
 		else
+		{
+			_putchar('0');
+			_putchar(',');
+			_putchar(' ');
 			j = n;
-	}
+		}
 	positive_values(j);
 }
 
