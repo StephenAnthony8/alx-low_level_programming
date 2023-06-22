@@ -1,0 +1,28 @@
+1. 
+	use ascii code values for a-z
+	for loop perhaps
+	for (i = "a"; i < "z"; i++)
+3.
+	if type int != true
+	return (0)
+	else 
+	run through the ascii values length and if its not in there 
+	return (0)
+11.
+	if n > 98
+		for n; n > 98; n--;
+	else if n < 98
+		for n; n < 98; n++;
+	else return (n);
+	
+	new_funct()
+	while v != 0
+		v / 10;
+		h++;
+14.
+	a + b = (a + b)
+	a = b
+	b = (a + b)
+	
+	b + c = d
+	
