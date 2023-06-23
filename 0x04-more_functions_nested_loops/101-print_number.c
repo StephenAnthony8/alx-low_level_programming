@@ -41,6 +41,8 @@ void calculate_number(int m)
 
 void print_number(int n)
 {
+	unsigned int m;
+	m = (n)
 	if (n > 0)
 		calculate_number(n);
 	else if (n < 0)
