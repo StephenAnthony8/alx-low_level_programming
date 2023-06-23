@@ -5,22 +5,28 @@
  */
 void calculate_number(int m)
 {
-	int n = 10;
+	int n = 10, o;
 
+	o = m;
 	while (m != 0)
 	{
 		if ((m / n) > 9)
+		{
 			n = n * 10;
+		}
 		else
 		{
 			_putchar((m / n) + '0');
 			m = m % n;
 			n = n / 10;
+
 		}
 	}
-	if ((m == 0) && (n == 1))
-		_putchar((m + '0'));
-
+	while (o % 10 == 0)
+	{
+		_putchar((o % 10) + '0');
+		o = o / 10;
+	}
 }
 /**
  * print_number - prints out numbers using _putchar()

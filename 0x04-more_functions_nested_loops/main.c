@@ -7,11 +7,11 @@
  */
 int main(void)
 {
-    print_number(98);
+    print_number(100);
     _putchar('\n');
     print_number(402);
     _putchar('\n');
-    print_number(010240);
+    print_number(10240);
     _putchar('\n');
     print_number(0);
     _putchar('\n');
