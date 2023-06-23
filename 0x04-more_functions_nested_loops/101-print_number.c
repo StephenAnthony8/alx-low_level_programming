@@ -8,13 +8,19 @@ void calculate_number(int m)
 	int n = 10, o;
 
 	o = m;
+	if (m < 10)
+	{
+		_putchar((m + '0'));
+		return;
+	}
+
 	while (m != 0)
 	{
 		if ((m / n) > 9)
 		{
 			n = n * 10;
 		}
-		else
+		else if ((m / n) <= 9)
 		{
 			_putchar((m / n) + '0');
 			m = m % n;
