@@ -41,14 +41,22 @@ void calculate_number(int m)
 
 void print_number(int n)
 {
-	if (n > 0)
+	if (n == INT_MIN)
+	{
+		_putchar('-');
+		calculate_number(-(n + 1));
+		_putchar('8');
+	}
+	else if (n > 0)
 		calculate_number(n);
 	else if (n < 0)
 	{
 		_putchar('-');
-		n = (-n);
+		n = -n;
 		calculate_number(n);
 	}
 	else
-		_putchar((n + '0'));
+		_putchar('0');
+
 }
+
