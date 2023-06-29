@@ -21,4 +21,8 @@ char *leet(char *);
 
 char *rot13(char *);
 
+void print_number(int n);
+
+void number_converter(int n);
+
 #endif /* MAIN_H */
