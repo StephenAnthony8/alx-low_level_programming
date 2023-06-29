@@ -1,0 +1,9 @@
+#ignore main.c and _putchar.c files
+main.c
+_putchar.c
+
+#ignore swp files
+*.swp
+
+#ignore .out files
+*.out
