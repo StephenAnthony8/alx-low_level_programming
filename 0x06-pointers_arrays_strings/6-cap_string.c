@@ -29,13 +29,13 @@ char *cap_string(char *n)
 			upper_val = 0;
 
 		if (upper_val == 1)
-			if(n[i] >= 97 && n[i] <= 122)
+			if (n[i] >= 97 && n[i] <= 122)
 			{
 				n[i] = n[i] - 32;
 				upper_val = 0;
 			}
 		i++;
-	
+
 	}
 	return (n);
 }
