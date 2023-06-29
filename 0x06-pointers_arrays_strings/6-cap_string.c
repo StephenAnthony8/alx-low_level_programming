@@ -8,7 +8,7 @@ char *cap_string(char *n)
 {
 	char symbol[] = {',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\n'};
 	int i, j, upper_val;
-	
+
 	i = 0;
 	upper_val = 0;
 
