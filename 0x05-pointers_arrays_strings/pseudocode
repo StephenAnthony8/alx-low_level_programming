@@ -1,0 +1,7 @@
+1. Check for the preceeding - & + signs
+2. Have a check for the position from where the digits start if no numerical values are available, return 0.
+3. If there are digits present, start counting up until the point the digits stop following each other in succession
+4. For every digit found, multiply it by the  place value of the digits available accordingly;this will happen in reverse with the multiplier being incremented by a multiple of 10
+5. return the value alongside the resulting value of the preceeding sign
+
+

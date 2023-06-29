@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * puts2 - prints out every other character in a string followed by a new line
+ * puts2 - prints out everyother char followed by a new line
  * @str: string printed out
  */
 void puts2(char *str)
