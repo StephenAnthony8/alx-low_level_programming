@@ -19,7 +19,13 @@ char *_strncpy(char *dest, char *src, int n)
 			i++;
 		}
 		else
-			continue;
+			break;
+	}
+	while (n != 0)
+	{
+		dest[i + 1] = '\0';
+		i++;
+		n--;
 	}
 	return (dest);
 }
