@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * _strchr - points to the first occurence of the character 'c' in string 's'
  * @s: String to be searched through
@@ -12,7 +11,7 @@ char *_strchr(char *s, char c)
 	char *k;
 
 	i = 0;
-	k = NULL;
+	k = '\0';
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
