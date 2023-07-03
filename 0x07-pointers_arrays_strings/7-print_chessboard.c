@@ -5,17 +5,17 @@
  */
 void print_chessboard(char (*a)[8])
 {
-	unsigned int i;
+	int i;
 	int j;
 
 	i = 0;
-	while (a[i][0] != '\0')
+	while (i <= 7)
 	{
-		j = 7;
-		while (j >= 0)
+		j = 0;
+		while (j <= 7)
 		{
 			_putchar(a[i][j]);
-			j--;
+			j++;
 		}
 		_putchar('\n');
 		i++;
