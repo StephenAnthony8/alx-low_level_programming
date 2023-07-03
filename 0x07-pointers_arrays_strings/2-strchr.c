@@ -1,29 +1,26 @@
 #include "main.h"
-#include <string.h>
+#include <stdio.h>
 /**
- *
+ * _strchr - points to the first occurence of the character 'c' in string 's'
+ * @s: String to be searched through
+ * @c: Character being searched for
+ * Return: New string being returned
  */
 char *_strchr(char *s, char c)
 {
-	int i, j; 
-	char *nada = NULL;
+	int i;
+	char *k;
 
-	j = i = 0;
-	while (s[i] != c)
+	i = 0;
+	k = NULL;
+	while (s[i] != '\0')
 	{
-		if (s[i] == '\0')
-			return (nada);
+		if (s[i] == c)
+		{
+			k = &s[i];
+			break;
+		}
 		i++;
 	}
-	while ((s[i] != '\0'))
-	{
-		s[j] = s[i];
-		j++;
-		i++;
-	}
-	if (s[i] == '\0')
-		s[j] = '\0';
-
-	return (s);
-
+	return (k);
 }
