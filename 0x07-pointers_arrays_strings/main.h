@@ -1,10 +1,15 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/* #ifndef NULL
-#define NULL ((void*)0)
-#endif */
+void print_chessboard(char (*a)[8]);
+
+int _putchar(char c);
+
 unsigned int _strspn(char *s, char *accept);
+
+char *_strstr(char *haystack, char *needle);
+
+char *_strpbrk(char *s, char *accept);
 
 char *_memset(char *s, char b, unsigned int n);
 
