@@ -7,3 +7,9 @@ _putchar.c
 
 #ignore .out files
 *.out
+
+#ignore pseudocode files
+pseudocode
+
+#ingore test.c files
+test.c
