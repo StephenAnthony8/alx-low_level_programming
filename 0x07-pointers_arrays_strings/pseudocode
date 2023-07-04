@@ -1,0 +1,5 @@
+7	
+	- For the first sum, iterate through the arrays incrementally with i
+	- For the second sum, iterate through the a[i] portion decrementally with i and incrementally with j
+	-using three variables, i, j, p_value
+	- two loops:
