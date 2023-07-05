@@ -11,5 +11,8 @@ _putchar.c
 #ignore pseudocode files
 pseudocode
 
-#ingore test.c files
+#ignore test.c files
 test.c
+
+#ignore alias commands file
+alias_comm*
