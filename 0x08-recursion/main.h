@@ -8,6 +8,8 @@ void _puts_recursion2(char *s, int i);
 void _print_rev_recursion(char *s);
 void _print_rev_recursion2(char *s, int i);
 /* question 2 */
+int _strlen_recursion(char *s);
+int _strlen_recursion_count(char *s, int i);
 
 /* question 3 */
 
