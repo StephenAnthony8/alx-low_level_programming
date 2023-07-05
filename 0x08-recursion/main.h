@@ -20,6 +20,8 @@ int factorial(int n);
 int _pow_recursion(int x, int y);
 
 /* question 5 */
+int _sqrt_recursion(int n);
+int _sqrt_recursion2(int n, int i);
 
 /* question 6 */
 
