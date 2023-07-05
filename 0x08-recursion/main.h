@@ -17,6 +17,7 @@ int _strlen_recursion_count(char *s, int i);
 int factorial(int n);
 
 /* question 4 */
+int _pow_recursion(int x, int y);
 
 /* question 5 */
 
