@@ -24,8 +24,11 @@ int _sqrt_recursion(int n);
 int _sqrt_recursion2(int n, int i);
 
 /* question 6 */
+int is_prime_number(int n);
+int is_prime_number_count(int n, int i);
 
 /* _putchar function */
 int _putchar(char c);
+
 
 #endif /* MAIN_H */
