@@ -30,5 +30,14 @@ int is_prime_number_count(int n, int i);
 /* _putchar function */
 int _putchar(char c);
 
+/* question 7 */
+int is_palindrome(char *s);
+int string_bool(char *s, int i, int j, int k);
+int string_count(char *s, int i);
+
+/* question 8 */
+int wildcmp(char *s1, char *s2);
+int wildcmp_count(char *s1, char *s2, int i, int j);
+
 
 #endif /* MAIN_H */
