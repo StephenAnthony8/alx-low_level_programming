@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 			puts("Error");
 			return (1);
 		}
-		j *= strtol(argv[i], NULL, 10);
+		j += strtol(argv[i], NULL, 10);
 		i++;
 	}
 	printf("%d\n", j);
