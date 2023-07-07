@@ -1,0 +1,23 @@
+#ignore main.c and _putchar.c files
+main.c
+_putchar.c
+
+#ignore swp files
+*.swp
+
+#ignore .out files
+*.out
+
+#ignore pseudocode files
+pseudocode
+
+#ignore test.c files
+test.c
+
+#ignore alias commands file
+alias_comm*
+
+#.o && .c files for this directory
+*.o
+*.c
+#
