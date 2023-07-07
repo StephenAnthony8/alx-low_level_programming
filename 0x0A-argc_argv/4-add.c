@@ -10,7 +10,8 @@ int main(int argc, char **argv)
 {
 	int i, j;
 
-	j = i = 1;
+	i = 1;
+	j = 0;
 	if (argc <= 1)
 	{
 		puts("0");
