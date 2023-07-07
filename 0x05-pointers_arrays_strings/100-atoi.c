@@ -3,45 +3,41 @@
 /**
  * _atoi - converts string to an integer
  * @s: string to be converted
- *
  * Return: the converted value
  */
 int _atoi(char *s)
 {
-	int i, d, n, l, f, dig;
+	int i, ic, ir, sign, pv;
+	unsigned int rtn;
 
-	i = 0;
-	d = 0;
-	n = 0;
-	l = 0;
-	f = 0;
-	dig = 0;
-
-	while (s[l] != '\0')
-		l++;
-
-	while (i < l && f == 0)
+	rtn = ir = ic = sign = i = 0;
+	pv = 1;
+	while (s[i] != '\0')
 	{
-		if (s[i] == '-')
-			++d;
-
+		if (s[i] == '+')
+			sign++;
+		else if (s[i] == '-')
+			sign--;
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			dig = s[i] - '0';
-			if (d % 2)
-				dig = -dig;
-			n = n * 10 + dig;
-			f = 1;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
-				break;
-			f = 0;
+			ic = i;
+			while ((s[ic] >= '0' && s[ic] <= '9') && (s[ic] != '\0'))
+				ic++;
+			ic--;
+			break;
 		}
 		i++;
 	}
-
-	if (f == 0)
+	while (ic >= i)
+	{
+		rtn += ((s[ic] - '0') * pv);
+		pv *= 10;
+		ic--;
+	}
+	if (rtn > 2147483647)
 		return (0);
-
-	return (n);
+	ir = rtn;
+	if (sign < 0)
+		return (-ir);
+	return (ir);
 }
-
