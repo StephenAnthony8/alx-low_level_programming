@@ -6,4 +6,10 @@ int _putchar(char c);
 /* question 0 */
 int main(int argc __attribute__((unused)), char **argv);
 
+/* question 1 */
+int main(int argc, char **argv __attribute__((unused)));
+
+/* question 2 */
+
+
 #endif
