@@ -8,10 +8,11 @@
  */
 int main(int argc, char **argv)
 {
-	int i, j;
+	int i, j, value;
+	char *endptr;
 
 	i = 1;
-	j = 0;
+	value = j = 0;
 	if (argc <= 1)
 	{
 		puts("0");
@@ -19,12 +20,13 @@ int main(int argc, char **argv)
 	}
 	while (i < argc)
 	{
-		if (!strtol(argv[i], NULL, 10))
+		value = strtol(argv[i], &endptr, 10);
+		if (*endptr != '\0')
 		{
 			puts("Error");
 			return (1);
 		}
-		j += strtol(argv[i], NULL, 10);
+		j += value;
 		i++;
 	}
 	printf("%d\n", j);
