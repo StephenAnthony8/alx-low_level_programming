@@ -16,3 +16,6 @@ test.c
 
 #ignore alias commands file
 alias_comm*
+
+#ignore blueprint file
+blueprint
