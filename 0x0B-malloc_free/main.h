@@ -15,6 +15,7 @@ char *_strdup(char *str);
 char *str_concat(char *s1, char *s2);
 
 /* Question 3 */
+int **alloc_grid(int width, int height);
 
 /* Question 4 */
 
