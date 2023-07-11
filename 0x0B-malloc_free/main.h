@@ -21,7 +21,9 @@ int **alloc_grid(int width, int height);
 void free_grid(int **grid, int height);
 
 /* Question 5 */
+char *argstostr(int ac, char **av);
 
 /* Question 6 */
+char **strtow(char *str);
 
 #endif
