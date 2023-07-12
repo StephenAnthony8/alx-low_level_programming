@@ -73,7 +73,7 @@ char **strtow(char *str)
 			if (str[j] >= '!' && str[j] <= '~')
 			{
 				count = j + char_count(str, j, 1);
-				arr[i] = malloc(sizeof(char) * (char_count(str, j, 1) + 1));
+				arr[i] = malloc(sizeof(char) * (count + 1));
 				if (arr[i] == NULL)
 				{
 					for (; i >=  0; i--)
