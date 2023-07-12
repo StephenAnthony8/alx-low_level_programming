@@ -3,7 +3,7 @@ main.c
 _putchar.c
 
 #ignore swp files
-*.swp
+*.*.sw*
 
 #ignore .out files
 *.out
@@ -13,6 +13,7 @@ pseudocode
 
 #ignore test.c files
 test.c
+test*.c
 
 #ignore alias commands file
 alias_comm*
