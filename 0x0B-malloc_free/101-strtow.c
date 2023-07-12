@@ -26,7 +26,7 @@ int char_count(char *str, int i, int flag)
 	if (v == 0)
 		return (count);
 	for (; str[i] != '\0'; i++)
-		if (str[i] >= '!' && str[i] <= 'z')
+		if (str[i] >= '!' && str[i] <= '~')
 		{
 			if (flag == 1)
 				count++;
@@ -41,7 +41,7 @@ int char_count(char *str, int i, int flag)
 					count++;
 			}
 		}
-		else if ((!(str[i] >= '!' && str[i] <= 'z')) && (flag == 1))
+		else if ((!(str[i] >= '!' && str[i] <= '~')) && (flag == 1))
 			count = 0;
 	return (count);
 }
@@ -70,10 +70,10 @@ char **strtow(char *str)
 	for (i = 0; i <= count; i++)
 		for (; str[j] != '\0'; j++)
 		{
-			if (str[j] >= '!' && str[j] <= 'z')
+			if (str[j] >= '!' && str[j] <= '~')
 			{
 				count = j + char_count(str, j, 1);
-				arr[i] = malloc(sizeof(char) * (count + 1));
+				arr[i] = malloc(sizeof(char) * (char_count(str, j, 1) + 1));
 				if (arr[i] == NULL)
 				{
 					for (; i >=  0; i--)

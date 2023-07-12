@@ -1,30 +1,35 @@
-#include <stdio.h>
-int char_count(char *str, int i, int flag) /* i for the iteration count , flag 1 for character count) */
+/**
+ * print_tab - Prints an array of string
+ * @tab: The array to print
+ *
+ * Return: nothing
+ */
+void print_tab(char **tab)
 {
-        int count;
-        count = 0;
-        for (; str[i] != '\0'; i++)
-                if (str[i] >= 'A' && str[i] <= 'z')
-                {
-                        if (flag == 1)
-                                count++;
-                        if (str[i + 1] == ' ' || str[i + 1] == '\0')
-                        {
-                                if (flag == 1)
-                                {
-                                        i++;
-                                        break;
-                                }
-                                else
-                                        count++;
-                        }
-                }
-                else if ((!(str[i] >= 'A' && str[i] <= 'z')) && (flag == 1))
-                        count = 0;
-        return (count);
+    int i;
+
+    for (i = 0; tab[i] != NULL; ++i)
+    {
+        printf("%s\n", tab[i]);
+    }
 }
+
+/**
+ * main - check the code for ALX School students.
+ *
+ * Return: 1 if an error occurred, 0 otherwise
+ */
 int main(void)
 {
-	printf("%d\n", char_count("Hello every Nyan", 0, 1));
-	return (0);
+    char **tab;
+
+    tab = strtow("   !@#$^&*(())_Talk  ><><.., ][{} 76478 is ~~     cheap :)   .   Show #$45&*(45 me  873589 the |[]{} -_=+ code.^&     ");
+    if (tab == NULL)
+    {
+        printf("Failed\n");
+        return (1);
+    }
+    print_tab(tab);
+    free(tab);
+    return (0);
 }
