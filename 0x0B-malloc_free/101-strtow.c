@@ -61,7 +61,7 @@ char **strtow(char *str)
 	if (char_count(str, 0, 0) == 0)
 		return (0);
 	count = char_count(str, 0, 0);
-	arr = malloc(sizeof(char *) * (count + 1));
+	arr = malloc(sizeof(char *) * (count));
 	if (arr == NULL)
 	{
 		free(arr);
@@ -87,6 +87,5 @@ char **strtow(char *str)
 				break;
 			}
 		}
-	arr[i] = '\0';
 	return (arr);
 }
