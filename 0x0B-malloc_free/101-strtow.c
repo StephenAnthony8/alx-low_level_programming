@@ -13,6 +13,7 @@ int char_count(char *str, int i, int flag)
 
 	count = 0;
 	if (i == 0)
+	{
 		for (j = 0; str[j] != '\0'; j++)
 		{
 			if (str[j] == ' ')
@@ -23,8 +24,9 @@ int char_count(char *str, int i, int flag)
 				break;
 			}
 		}
-	if (v == 0)
-		return (count);
+		if (v == 0)
+			return (count);
+	}
 	for (; str[i] != '\0'; i++)
 		if (str[i] >= '!' && str[i] <= '~')
 		{
