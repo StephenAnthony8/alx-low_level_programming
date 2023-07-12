@@ -73,7 +73,7 @@ char **strtow(char *str)
 			if (str[j] >= '!' && str[j] <= 'z')
 			{
 				count = j + char_count(str, j, 1);
-				arr[i] = malloc(sizeof(char) * (count));
+				arr[i] = malloc(sizeof(char) * (count + 1));
 				if (arr[i] == NULL)
 				{
 					for (; i >=  0; i--)
@@ -83,6 +83,7 @@ char **strtow(char *str)
 				}
 				for (k = 0; j < count; j++, k++)
 					arr[i][k] = str[j];
+				arr[i][k] = '\0';
 				break;
 			}
 		}
