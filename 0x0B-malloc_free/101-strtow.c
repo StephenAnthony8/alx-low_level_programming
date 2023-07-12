@@ -45,7 +45,7 @@ char **strtow(char *str)
 	j = 0;
 	if (str == NULL)
 		return (0);
-	else if (str[0] == '\0')
+	else if (str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
 		return (0);
 	count = char_count(str, 0, 0);
 	arr = malloc(sizeof(char *) * (count + 1));
