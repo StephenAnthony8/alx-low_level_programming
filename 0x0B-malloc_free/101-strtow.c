@@ -1,45 +1,79 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- *
+ * char_count - counts the number of words/chars in a string/ substring
+ * @str: string to be counted through
+ * @i: initializing count
+ * @flag: character/word option
+ * Return: count
+ */
+int char_count(char *str, int i, int flag)
+{
+	int count;
+
+	count = 0;
+	for (; str[i] != '\0'; i++)
+		if (str[i] >= '!' && str[i] <= 'z')
+		{
+			if (flag == 1)
+				count++;
+			if (str[i + 1] == ' ' || str[i + 1] == '\0')
+			{
+				if (flag == 1)
+				{
+					i++;
+					break;
+				}
+				else
+					count++;
+			}
+		}
+		else if ((!(str[i] >= '!' && str[i] <= 'z')) && (flag == 1))
+			count = 0;
+	return (count);
+}
+/**
+ * strtow - converts a string into a 2D array of words
+ * @str: string to be converted
+ * Return: 2D array of words
  */
 char **strtow(char *str)
 {
-	int cc, i, j, k, wc;
+	int count, i, j, k;
 	char **arr;
-	
-	wc = 0;
-	for (i = 0;str[i] != '\0'; i++)
-	{
-		for (; (str[i] == ' ' && str[i] != '\0'); i++)
-		for (; (str[i] != ' ' && str[i] != '\0'); i++)
-		wc++;
-		if (str[i + 1] == '\0' && str[i] == ' ')
-			wc--;
-	}
-	arr = malloc(sizeof(char *) * (wc + 1));
-	if (arr == NULL)
+
+	j = 0;
+	if (str == NULL)
 		return (0);
-	for (i = 0;i <= wc + 1; i++)
-		for (j = 0;str[j] != '\0'; i++)
+	else if (str[0] == '\0')
+		return (0);
+	count = char_count(str, 0, 0);
+	arr = malloc(sizeof(char *) * (count + 1));
+	if (arr == NULL)
+	{
+		free(arr);
+		return (0);
+	}
+	for (i = 0; i <= count; i++)
+		for (; str[j] != '\0'; j++)
 		{
-			for (;(str[j] == ' ' && str[j] != '\0');j++)
-			cc = 0;
-			for (; (str[j] != ' ' && str[j] != '\0'); j++)
-				cc++;
-			if (cc != 0)
+			if (str[j] >= '!' && str[j] <= 'z')
 			{
-				j -= cc;
-				arr[i] = malloc(sizeof(char) * (cc + 1));
+				count = j + char_count(str, j, 1);
+				arr[i] = malloc(sizeof(char) * (count + 1));
 				if (arr[i] == NULL)
-					return (0);
-				k = 0;
-				for (;(str[j] != ' ' || str[j] != '\0'); j++)
 				{
-					arr[i][k] = str[j];
-					k++;
+					for (; i >=  0; i--)
+						free(arr[i]);
+					free(arr);
+					return (0);
 				}
+				for (k = 0; j < count; j++, k++)
+					arr[i][k] = str[j];
+				arr[i][k] = '\0';
+				break;
 			}
 		}
+	arr[i] = '\0';
 	return (arr);
 }

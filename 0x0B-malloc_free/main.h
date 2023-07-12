@@ -24,6 +24,7 @@ void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
 
 /* Question 6 */
+int char_count(char *str, int i, int flag);
 char **strtow(char *str);
 
 #endif
