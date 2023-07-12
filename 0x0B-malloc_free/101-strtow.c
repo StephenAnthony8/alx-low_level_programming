@@ -9,9 +9,22 @@
  */
 int char_count(char *str, int i, int flag)
 {
-	int count;
+	int count, j, v;
 
 	count = 0;
+	if (i == 0)
+		for (j = 0; str[j] != '\0'; j++)
+		{
+			if (str[j] == ' ')
+				v = 0;
+			else
+			{
+				v = 1;
+				break;
+			}
+		}
+	if (v == 0)
+		return (count);
 	for (; str[i] != '\0'; i++)
 		if (str[i] >= '!' && str[i] <= 'z')
 		{
@@ -45,7 +58,7 @@ char **strtow(char *str)
 	j = 0;
 	if (str == NULL)
 		return (0);
-	else if (str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
+	if (char_count(str, 0, 0) == 0)
 		return (0);
 	count = char_count(str, 0, 0);
 	arr = malloc(sizeof(char *) * (count + 1));
