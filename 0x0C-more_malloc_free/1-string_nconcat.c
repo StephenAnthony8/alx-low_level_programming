@@ -22,7 +22,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n >= j)
 		count = sizeof(char) * (i + j + 1);
 	else
-		count = sizeof(char) * (i + n);
+		count = sizeof(char) * (i + n + 1);
 	arr = malloc(count);
 	if (!arr)
 	{
