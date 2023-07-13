@@ -11,7 +11,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	void *arr;
 	unsigned int i, count;
 
-	if (!(nmemb || size))
+	if (!nmemb || !size)
 		return (0);
 	count = nmemb * size;
 	arr = malloc(count);
