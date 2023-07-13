@@ -34,7 +34,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (0);
 	}
 	for (i = 0; i < count; i++)
-		((char *)arr)[i] = 1;
+		((char *)arr)[i] = ((char *)ptr)[i];
 	free(ptr);
 	return (arr);
 
