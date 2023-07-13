@@ -19,7 +19,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 != NULL)
 		while (s2[j] != '\0')
 			j++;
-	if (j <= n)
+	if (n >= j)
 		count = sizeof(char) * (i + j + 1);
 	else
 		count = sizeof(char) * (i + n);
