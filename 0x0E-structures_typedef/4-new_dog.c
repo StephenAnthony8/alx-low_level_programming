@@ -1,14 +1,18 @@
 #include "dog.h"
 #include <stdlib.h>
 /**
- *
+ * new_dog - creates a new struct
+ * @name: dog name
+ * @age: dog age
+ * @owner: dog owner
+ * Return: new struct
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *struct_arr;
-	char * nm, *own;
+	char *nm, *own;
 	int count, i, j;
-	
+
 	j = i = 0;
 	struct_arr = malloc(sizeof(dog_t));
 	if (!struct_arr)
@@ -25,7 +29,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(struct_arr);
 		return (0);
 	}
-	while (owner[i] != '\0')
+	while (owner[j] != '\0')
 		j++;
 	own = malloc(sizeof(char) * j + 1);
 	if (!own)
@@ -36,11 +40,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (0);
 	}
 	for (count = 0; count <= i; count++)
-		struct_arr->nm[count] = name[count];
+		nm[count] = name[count];
 	for (count = 0; count <= j; count++)
-		struct_arr->own[count] = owner[count];
-	struct_arr.name = nm;
-	struct_arr.age = age;
-	struct_arr.owner = own;
+		own[count] = owner[count];
+	struct_arr->name = nm;
+	struct_arr->age = age;
+	struct_arr->owner = own;
 	return (struct_arr);
 }
