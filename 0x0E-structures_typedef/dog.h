@@ -22,4 +22,8 @@ void print_dog(struct dog *d);
 /* Question 4 */
 dog_t *new_dog(char *name, float age, char *owner);
 
+/* Question 5 */
+void free_dog(dog_t *d);
+
+
 #endif
