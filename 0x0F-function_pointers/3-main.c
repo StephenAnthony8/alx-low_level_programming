@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 
-	if ((argv[2][0] == ('/' || '%')) && ((!a) || (!b)))
+	if (((argv[2][0] == '/') || (argv[2][0] == '%')) && ((!b) || (!a)))
 	{
 		puts("Error");
 		exit(100);
