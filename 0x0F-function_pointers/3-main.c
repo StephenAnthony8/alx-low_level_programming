@@ -26,7 +26,8 @@ int main(int argc, char **argv)
 		puts("Error");
 		exit(100);
 	}
-	if (argv[2][0] != ('/' && '%' && '*' && '-' && '+'))
+	if ((argv[2][0] != '*') && (argv[2][0] != '%') && (argv[2][0] != '/')
+				&& (argv[2][0] != '-') && (argv[2][0] != '+'))
 	{
 		puts("Error");
 		exit(99);
@@ -34,5 +35,6 @@ int main(int argc, char **argv)
 	op = get_op_func(argv[2]);
 	result = op(a, b);
 
-	return (result);
+	printf("%d\n", result);
+	return (0);
 }

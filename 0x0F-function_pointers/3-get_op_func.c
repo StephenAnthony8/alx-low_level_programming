@@ -21,6 +21,7 @@ int (*get_op_func(char *s))(int, int)
 	{
 		if (!(strcmp(s, ops[i].op)))
 			return (ops[i].f);
+		i++;
 	}
 	return (NULL);
 }
