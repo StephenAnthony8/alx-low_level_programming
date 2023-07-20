@@ -2,7 +2,10 @@
 #include <stdarg.h>
 #include <stdio.h>
 /**
- *
+ * print_strings - prints arg strings
+ * @separator: delimiter
+ * @n: number of strings
+ * @...:strings
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
