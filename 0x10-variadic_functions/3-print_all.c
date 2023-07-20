@@ -9,8 +9,8 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	char *r_str;
-	int i = 0, check = 0;
+	char *r_str, *delimiter = "";
+	int i = 0;
 
 	va_start(args, format);
 	while (format[i] != '\0')
@@ -18,29 +18,23 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case ('c'):
-				printf("%c", va_arg(args, int));
-				check = 1;
+				printf("%s%c", delimiter, va_arg(args, int));
 				break;
 			case ('i'):
-				printf("%d", va_arg(args, int));
-				check = 1;
+				printf("%s%d", delimiter, va_arg(args, int));
 				break;
 			case ('f'):
-				printf("%f", va_arg(args, double));
-				check = 1;
+				printf("%s%f", delimiter, va_arg(args, double));
 				break;
 			case ('s'):
 				r_str = va_arg(args, char *);
 				if (r_str == NULL)
 					r_str = "(nil)";
-				printf("%s", r_str);
-				check = 1;
+				printf("%s%s", delimiter, r_str);
 				break;
 		}
-		if ((format[i + 1] != '\0') && (check))
-			printf(", ");
 		i++;
-		check = 0;
+		delimiter = ", ";
 	}
 	printf("\n");
 	va_end(args);
