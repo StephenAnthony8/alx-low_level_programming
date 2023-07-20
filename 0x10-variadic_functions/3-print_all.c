@@ -34,8 +34,8 @@ void print_all(const char * const format, ...)
 					printf("%s%s", delimiter, r_str);
 					break;
 			}
-			i++;
 			delimiter = ", ";
+			i++;
 		}
 	printf("\n");
 	va_end(args);
