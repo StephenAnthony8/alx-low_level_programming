@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
@@ -36,6 +37,8 @@ list_t *add_node_end(list_t **head, const char *str);
 
 /* question 4 */
 void free_list(list_t *head);
+
+/* question 100 */
 
 #endif
 
