@@ -11,6 +11,8 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *h;
 	size_t len = 0;
 
+	if (!ptr)
+		return (NULL);
 	ptr->str = strdup(str);
 
 	while (str[len] != '\0')
