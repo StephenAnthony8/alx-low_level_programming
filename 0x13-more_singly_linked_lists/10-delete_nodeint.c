@@ -1,6 +1,9 @@
 #include "lists.h"
 /**
- *
+ * delete_nodeint_at_index - deletes a node at a specified index
+ * @head: initializing index;
+ * @index: index position to be deleted
+ * Return: returns 1 or -1 depending on the return status
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
@@ -10,7 +13,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	count_n = tmp = *head;
 
 	if (*head == NULL)
-		return ( (index ? -1 : 1));
+		return ((index ? -1 : 1));
 	for (i = 0; count_n; i++)
 		count_n = count_n->next;
 	if (i < index)
