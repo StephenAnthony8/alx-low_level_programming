@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_binary - prints the binary value of n
- * @n; Number to be converted
+ * @n: Number to be converted
  */
 void print_binary(unsigned long int n)
 {
@@ -23,8 +23,6 @@ void print_binary(unsigned long int n)
 				else
 					_putchar('0');
 			}
-			
-
 		}
 	}
 

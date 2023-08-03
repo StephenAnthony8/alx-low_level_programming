@@ -8,6 +8,7 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int base = 2, value = 0, i;
+
 	for (i = 0; n; i++)
 	{
 		value = n % base;
