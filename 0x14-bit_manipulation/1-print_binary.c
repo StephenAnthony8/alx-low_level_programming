@@ -17,7 +17,7 @@ void print_binary(unsigned long int n)
 			_putchar('1');
 			for (count = 0; m > n && m; count++)
 			{
-				m /= 2;
+				m >>= 1;
 				if (count == 0)
 					continue;
 				else
