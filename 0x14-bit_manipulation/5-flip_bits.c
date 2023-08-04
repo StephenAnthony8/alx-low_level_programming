@@ -13,13 +13,14 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		return (0);
 
 	xor_val = n ^ m;
-	if (xor_val == n)
-		return (1);
 	count = 0;
 	b_mask = shift = 1;
 	while (xor_val >= b_mask)
 	{
-		if (xor_val == (xor_val | b_mask))
+		if (count == 64)
+			return (count);
+
+		else if (xor_val == (xor_val | b_mask))
 			count++;
 		b_mask = 1 << shift;
 		shift++;
