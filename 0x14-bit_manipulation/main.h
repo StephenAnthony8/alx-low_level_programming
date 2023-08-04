@@ -16,4 +16,7 @@ int get_bit(unsigned long int n, unsigned int index);
 /* question 3 */
 int set_bit(unsigned long int *n, unsigned int index);
 
+/* question 4 */
+int clear_bit(unsigned long int *n, unsigned int index);
+
 #endif
