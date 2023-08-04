@@ -13,4 +13,7 @@ void print_binary(unsigned long int n);
 /* question 2 */
 int get_bit(unsigned long int n, unsigned int index);
 
+/* question 3 */
+int set_bit(unsigned long int *n, unsigned int index);
+
 #endif
