@@ -7,7 +7,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd, i;
+	int fd, i, wr_tc;
 
 	i = fd = 0;
 	if (!filename)
@@ -22,8 +22,8 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	while (text_content[i])
 		i++;
-	if (text_content != NULL)
-		write(fd, text_content, i);
+	wr_tc = write(fd, text_content, i);
 	close(fd);
-	return (1);
+
+	return (wr_tc != -1 ? 1 : -1);
 }
