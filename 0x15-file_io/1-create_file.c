@@ -1,28 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
+
 /**
- * create_file - creates or truncates existing files
- * @filename: file to be created/modified
- * @text_content: file content
- * Return: execution value
+ * main - check the code
+ *
+ * Return: Always 0.
  */
-int create_file(const char *filename, char *text_content)
+int main(int ac, char **av)
 {
-	int fd, i, wr_tc;
+    int res;
 
-	i = fd = 0;
-	if (!filename)
-		return (-1);
-	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
-	if (fd == -1)
-	{
-		close(fd);
-		return (-1);
-	}
-	if (text_content)
-		while (text_content[i])
-			i++;
-	wr_tc = write(fd, text_content, i);
-	close(fd);
-
-	return (wr_tc != -1 ? 1 : -1);
+    if (ac != 3)
+    {
+        dprintf(2, "Usage: %s filename text\n", av[0]);
+        exit(1);
+    }
+    res = append_text_to_file(av[1], av[2]);
+    printf("-> %i)\n", res);
+    return (0);
 }
