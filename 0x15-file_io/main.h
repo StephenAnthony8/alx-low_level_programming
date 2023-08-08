@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <limits.h>
+#include <stdio.h>
 
 /* print function */
 int _putchar(char c);
@@ -18,5 +19,7 @@ int create_file(const char *filename, char *text_content);
 /*question 2 */
 int append_text_to_file(const char *filename, char *text_content);
 
+/* question 3 */
+int file_cp(char *file_from, char * file_to);
 
 #endif
