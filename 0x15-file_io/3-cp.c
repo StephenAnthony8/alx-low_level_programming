@@ -27,7 +27,7 @@ int file_cp(char *file_from, char *file_to)
 			return (c_value == -1 ? fd : fd_2);
 		return (fd == -1 ? 98 : 99);
 	}
-	while ((b_read = read(fd, buffer, 1024)))
+	while (0 < (b_read = read(fd, buffer, 1024)))
 	{
 		f_write = write(fd_2, buffer, b_read);
 		if (b_read == -1 || f_write == -1)
