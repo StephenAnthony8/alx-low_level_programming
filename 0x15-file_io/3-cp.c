@@ -10,12 +10,12 @@ int file_cp(char *file_from, char *file_to)
 	int fd, fd_2, c_value, c_value2;
 	int b_read, f_write;
 	unsigned int perm;
-	char buffer[1024];
+	char *buffer = malloc(1024);
 
 	perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	if (!file_from)
 		return (98);
-	else if (!file_to)
+	else if (!file_to || !buffer)
 		return (99);
 	fd = open(file_from, O_RDONLY);
 	fd_2 = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, perm);
@@ -39,6 +39,7 @@ int file_cp(char *file_from, char *file_to)
 			return (b_read == -1 ? 98 : 99);
 		}
 	}
+	free(buffer);
 	return (1);
 
 }
