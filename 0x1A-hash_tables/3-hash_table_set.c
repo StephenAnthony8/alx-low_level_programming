@@ -8,7 +8,7 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *set = NULL;
+	hash_node_t *set = NULL, *cmp = NULL;
 	char *value_cpy = NULL;
 	unsigned long int index;
 
@@ -32,9 +32,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	set->value = value_cpy;
 
 	index = key_index((unsigned char *)key, ht->size);
-
-	set->next = (ht->array[index] ? ht->array[index] : NULL);
-
+	if (ht->array[index])
+	{
+		cmp = ht->array[index];
+		if (!strcmp(cmp->key, key))
+		{
+			set->next = cmp->next;
+			free(cmp);
+			cmp = NULL;
+		}
+	}
+	set->next = cmp;
 	ht->array[index] = set;
 	return (1);
 }
