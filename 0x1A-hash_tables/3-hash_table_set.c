@@ -10,6 +10,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *set = NULL, *cmp = NULL;
 	char *value_cpy = NULL;
+	int rtn = 1;
 	unsigned long int index;
 
 	if (!ht || !key || !value)
@@ -40,9 +41,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			set->next = cmp->next;
 			free(cmp);
 			cmp = NULL;
+			rtn = 0;
 		}
 	}
 	set->next = cmp;
 	ht->array[index] = set;
-	return (1);
+	return (rtn);
 }
