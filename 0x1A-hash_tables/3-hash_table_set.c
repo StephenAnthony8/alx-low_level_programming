@@ -16,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (!(ht->array))
 		return (0);
-	value_cpy = malloc(sizeof(char) * strlen(value));
+	value_cpy = malloc(sizeof(char) * strlen(value) + 1);
 	if (!value_cpy)
 		return (0);
 	strcpy(value_cpy, value);
