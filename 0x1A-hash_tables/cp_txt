@@ -1,0 +1,33 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "hash_tables.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always EXIT_SUCCESS.
+ */
+int main(void)
+{
+    hash_table_t *ht;
+    int v[8], i;
+
+    ht = hash_table_create(1024);
+    v[0] = hash_table_set(ht, "betty", "cool");
+    v[1] = hash_table_set(ht, "hetairas","mentioner");
+    v[2] = hash_table_set(ht, "heliotropes","neurospora");
+    v[3] = hash_table_set(ht, "depravement","serafins");
+    v[4] = hash_table_set(ht, "stylist","subgenera");
+    v[5] = hash_table_set(ht, "joyful","synaphea");
+    v[6] = hash_table_set(ht, "redescribed","urites");
+    v[7] = hash_table_set(ht, "dram","vivency");
+
+    for (i = 0; i < 8; i++)
+	{
+		if (ht->array[v[i]]->next)
+			printf("+ ");
+		printf("%s\n", ht->array[v[i]]->key);
+	
+    }	    return (EXIT_SUCCESS);
+}

@@ -2,21 +2,21 @@
 /**
  * hash_table_set - adds an element to the hash table
  * @ht: hash table struct
- * @key: explanatory
+ * @key: string to be hashed
  * @value: pair value of key
  * Return: 1: success 0: failure
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *set;
-	hash_node_t **ht_arr;
-	char *value_cpy;
+	hash_node_t *set = NULL;
+	char *value_cpy = NULL;
 	unsigned long int index;
 
 	if (!ht || !key || !value)
 		return (0);
-	if (!ht->array)
+	if (!(ht->array))
 		return (0);
+
 	value_cpy = malloc(sizeof(char) * strlen(value));
 	if (!value_cpy)
 		return (0);
@@ -27,12 +27,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(value_cpy);
 		return (0);
 	}
+
 	set->key = (char *)key;
 	set->value = value_cpy;
-	index = key_index((unsigned char *)key, ht->size);
-	ht_arr = ht->array;
 
-	set->next = (ht_arr[index] ? ht_arr[index] : NULL);
-	ht_arr[index] = set;
+	index = key_index((unsigned char *)key, ht->size);
+
+	set->next = (ht->array[index] ? ht->array[index] : NULL);
+
+	ht->array[index] = set;
 	return (1);
 }
