@@ -20,3 +20,6 @@ alias_comm*
 
 #ignore blueprint file
 blueprint
+
+#ignore main.py
+main.py
