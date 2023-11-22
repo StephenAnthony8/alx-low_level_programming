@@ -1,0 +1,43 @@
+# Compiler
+CC = gcc
+# Source files
+SRC = main.c school.c
+# Object files (automatically generated from source files)
+OBJ = $(SRC:.c=.o)
+# Executable name
+NAME = school
+
+# Rules
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) -o $@ $(OBJ) $(CFLAGS)
+
+# Pattern rule for object files
+%.o: %.c
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+clean:
+	$(RM) *~ $(NAME) $(OBJ)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
+
+# Ensure m.h is present
+m.h:
+	@echo "Error: m.h not found! Makefile cannot proceed."
+	@exit 1
+
+# Ensure that cleaning rules do not fail
+.PHONY: clean oclean fclean
+
+# Ensure recompilation rule does not fail
+.PHONY: re
+
+# Rules for deleting files
+RM = rm -f
+
