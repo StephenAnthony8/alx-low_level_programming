@@ -5,6 +5,11 @@
 """
 
 def island_perimeter(grid):
+    """
+        island_perimeter: calculates the perimeter of a list of lists grid
+        @grid - list of lists
+        Return: perimeter
+    """
     if (type(grid) is not list):
         return (0)
 
