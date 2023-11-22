@@ -4,6 +4,7 @@
     Module containing function 'island_perimeter'
 """
 
+
 def island_perimeter(grid):
     """
         island_perimeter: calculates the perimeter of a list of lists grid
@@ -29,16 +30,14 @@ def island_perimeter(grid):
             # length behind
             if ((j > 0) and (width[j - 1] != 0)):
                 val -= 1
-            #length forward
+            # length forward
             if ((j != (len(width) - 1)) and (width[j + 1] != 0)):
                 val -= 1
 
-            #height
+            # height
             if (prev_i != []):
                 if (prev_i[j] == 1):
                     val -= 2
 
             rtn_value += val
     return (rtn_value)
-
-
