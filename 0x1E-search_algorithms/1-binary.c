@@ -8,26 +8,30 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int i, left, right, middle;
+	int *print_arr, i, left, right, mid;
 
 	left = 0;
 	right = size - 1;
-
 	if (array)
 		while (left <= right)
 		{
-			printf("searching in array: ");
+			/* print array */
+			print_arr = array;
+			printf("Searching in array: ");
 			for (i = left; i <= right; i++)
-				printf("%d%s", array[i], (i == right ? "\n" : ", "));
+			{
+				printf("%d%s", print_arr[i], (i < right ? ", " : "\n"));
+			}
+			/* get the midpoint of the array */
+			mid = ((right + left) / 2);
 
-			middle = (left + right) / 2;
-
-			if (array[middle] > value)
-				right = middle - 1;
-			else if (array[middle] < value)
-				left = middle + 1;
+			/* check if midpoint is larger or smaller than original*/
+			if (value > array[mid])
+				left = (mid + 1);
+			else if (value < array[mid])
+				right = (mid - 1);
 			else
-				return (middle);
+				return (mid);
 		}
 	return (-1);
 }
