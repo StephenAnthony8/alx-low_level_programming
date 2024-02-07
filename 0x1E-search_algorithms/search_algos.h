@@ -26,6 +26,7 @@ int binary_search(int *array, size_t size, int value);
 
 /* advanced */
 int jump_search(int *array, size_t size, int value);
+listint_t *jump_list(listint_t *list, size_t size, int value);
 
 #endif /*SEARCH_ALGOS_H */
 
